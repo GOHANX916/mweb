@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix M</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .hamburger span {
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .title-font {
+      font-family: 'Orbitron', sans-serif;
+    }
+    #mobile-menu {
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 200px;
+      opacity: 1;
+    }
+    .tenor-gif-embed {
+      background: none !important;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Header -->
+  <header class="bg-black p-4 flex justify-between items-center fixed w-full top-0 z-50 shadow-lg">
+    <div class="text-2xl font-bold text-neon-green title-font">Matrix M</div>
+    <div class="ml-2">
+      <iframe frameborder="0" scrolling="no" src="https://tenor.com/embed/2693669384777924386" style="width: 30px; height: 30px; object-fit: contain; border: none; pointer-events: none;"></iframe>
+    </div>
+    <div>
+      <button class="focus:outline-none md:hidden" id="menu-toggle">
+        <div class="hamburger">
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white mb-1"></span>
+          <span class="block w-6 h-0.5 bg-white"></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="bg-black p-4 fixed w-full top-16 z-40" id="mobile-menu">
+    <nav class="space-y-4">
+      <a class="block hover:text-neon-green" href="#product-categories" onclick="toggleMenu()">Product Categories</a>
+      <a class="block hover:text-neon-green" href="#buy-products" onclick="toggleMenu()">Buy Products</a>
+      <a class="block hover:text-neon-green" href="#subscribe" onclick="toggleMenu()">Subscribe</a>
+      <a class="block hover:text-neon-green" href="#about-us" onclick="toggleMenu()">About Us</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main class="pt-24 flex flex-col items-center justify-start min-h-screen">
+    <!-- Preview Section -->
+    <!-- Preview Section -->
+<section class="w-full max-w-xs bg-black p-4 rounded-lg shadow-lg mb-8 flex items-center relative">
+  <h1 class="text-xl font-bold title-font text-white mr-2">Streaming M</h1>
+  <div class="w-12 h-12">
+    <iframe 
+      frameborder="0" 
+      scrolling="no" 
+      src="https://tenor.com/embed/18901058" 
+      style="width: 100%; height: 100%; border: none; pointer-events: none;">
+    </iframe>
+  </div>
+</section>
+    <!-- Video Section -->
+    <section class="w-full max-w-xs">
+  <div style="position:relative;padding-top:56.25%;">
+    <iframe 
+      src="https://iframe.mediadelivery.net/embed/368059/36373df6-6611-45cf-a01d-da4bab1b61e2?autoplay=true&loop=false&muted=false&preload=true&responsive=true" 
+      loading="lazy" 
+      style="border:0;position:absolute;top:0;height:100%;width:100%;" 
+      allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+      allowfullscreen="true">
+    </iframe>
+  </div>
+  <p class="mt-4 text-center text-sm">
+    This is the streaming version of our tools, undetectable. Here anti-cheat ends!
+  </p>
+</section>
+    <!-- Feedback Section -->
+    <section class="w-full max-w-xs mt-8">
+      <h2 class="text-xl font-bold title-font text-white mb-4">Feedbacks</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <img
+          alt="images"
+          class="w-3/4 mx-auto rounded cursor-pointer"
+          src="https://i.ibb.co/fXtbn9B/IMG-20250112-210307.jpg"
+          onclick="openImageModal('https://i.ibb.co/fXtbn9B/IMG-20250112-210307.jpg')"
+        />
+        <img
+          alt="images-1"
+          class="w-full rounded cursor-pointer"
+          src="https://i.ibb.co/TB7d9Px/IMG-20250112-210155-644.jpg"
+          onclick="openImageModal('https://i.ibb.co/TB7d9Px/IMG-20250112-210155-644.jpg')"
+        />
+        <img
+          alt="images-4"
+          class="w-full rounded cursor-pointer"
+          src="https://i.ibb.co/4mtG6xh/IMG-20250112-210132-844.jpg"
+          onclick="openImageModal('https://i.ibb.co/4mtG6xh/IMG-20250112-210132-844.jpg')"
+        />
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Modal -->
+  <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
+    <div class="relative max-w-full max-h-full">
+      <button
+        class="absolute top-0 right-0 text-white text-2xl font-bold bg-gray-800 rounded-full p-2"
+        onclick="closeImageModal()"
+      >
+        &times;
+      </button>
+      <img id="modal-image" class="max-w-full max-h-full rounded" alt="Feedback Image" />
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full py-4 bg-black text-center text-sm text-gray-500">
+    © 2025 Matrix M. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+
+    function toggleMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+
+    function openImageModal(src) {
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('modal-image');
+      modalImage.src = src;
+      modal.classList.remove('hidden');
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('image-modal');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

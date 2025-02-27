@@ -1,0 +1,210 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Payment Portal - Matrix M
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .title-font {
+      font-family: 'Orbitron', sans-serif;
+    }
+    .tenor-gif-embed {
+      background: none !important;
+      pointer-events: none;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal-content {
+      background-color: #1a1a1a;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+ </head>
+ <body class="bg-black text-white">
+  <!-- Header -->
+  <header class="bg-black p-4 flex justify-between items-center fixed w-full top-0 z-50 shadow-lg">
+   <div class="text-2xl font-bold text-neon-green title-font">
+    Matrix M
+   </div>
+   <div class="ml-2">
+    <iframe frameborder="0" scrolling="no" src="https://tenor.com/embed/2693669384777924386" style="width: 30px; height: 30px; object-fit: contain; border: none; pointer-events: none;">
+    </iframe>
+   </div>
+   <nav class="hidden md:flex space-x-4">
+    <a class="text-white hover:text-neon-green" href="#">
+     Home
+    </a>
+    <a class="text-white hover:text-neon-green" href="#">
+     About
+    </a>
+    <a class="text-white hover:text-neon-green" href="#">
+     Services
+    </a>
+    <a class="text-white hover:text-neon-green" href="#">
+     Contact
+    </a>
+   </nav>
+  </header>
+  <!-- Main Content -->
+  <main class="pt-20">
+   <section class="text-center py-10">
+    <h1 class="text-4xl md:text-6xl font-bold title-font text-neon-green">
+     Payment Portal
+    </h1>
+    <p class="mt-4 text-lg md:text-2xl text-gray-300">
+     Complete your payment using the QR code below
+    </p>
+   </section>
+   <section class="py-10">
+    <div class="container mx-auto px-4">
+     <div class="flex flex-col items-center">
+      <h2 class="text-3xl md:text-4xl font-bold title-font text-neon-green mb-6">
+       Chosen Product
+      </h2>
+      <div class="relative p-6 rounded-lg text-center appear">
+    <!-- Gaming Console Image -->
+    <img 
+        alt="Gaming console with controllers" 
+        class="w-full h-48 object-cover mb-4 rounded-lg" 
+        src="https://i.ibb.co/mSSHLFy/images-10.jpg" 
+        width="300" 
+        height="200"/>
+
+    <!-- Title -->
+    <h3 class="text-xl font-bold text-neon-green">
+        X Mod Menu
+    </h3>
+
+    <!-- Description -->
+    <p class="mt-2">
+        This mod menu contains functions like AWM aimbot, ESP location, etc.
+    </p>
+    
+       <p class="mt-2 text-lg font-bold text-neon-green">
+        Price: ₹200
+       </p>
+      </div>
+      <img alt="QR code for payment" class="w-64 h-64 object-cover mb-6" src="https://i.ibb.co/GvN6Jmf/Screenshot-2024-12-05-07-33-52-08-b86b87620f0dd897e4c0859ecbb2d537-2.jpg"/>
+      <p class="text-lg md:text-xl text-gray-300 mb-4">
+       Scan the QR code with your payment app
+      </p>
+      <div class="bg-gray-800 p-4 rounded-lg w-full md:w-1/2">
+       <h2 class="text-2xl font-bold title-font text-neon-green mb-4">
+        Steps to Complete Payment
+       </h2>
+       <ol class="list-decimal list-inside text-gray-300">
+        <li class="mb-2">
+         Open your payment app and scan the QR code
+        </li>
+        <li class="mb-2">
+         Enter the amount and complete the payment
+        </li>
+        <li class="mb-2">
+         After payment, you will receive a transaction ID
+        </li>
+        <li class="mb-2">
+         Enter the transaction ID below to confirm your payment
+        </li>
+        <li class="mb-2">
+         If you do fake payments, it will not proceed
+        </li>
+       </ol>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg w-full md:w-1/2 mt-6">
+       <h2 class="text-2xl font-bold title-font text-neon-green mb-4">
+        Confirm Payment
+       </h2>
+       <form id="payment-form">
+        <div class="mb-4">
+         <label class="block text-gray-300 mb-2" for="transaction-id">
+          Transaction ID
+         </label>
+         <input class="w-full p-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-neon-green" id="transaction-id" name="transaction-id" type="text"/>
+        </div>
+        <button class="w-full p-2 rounded bg-neon-green text-black font-bold hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500" type="submit">
+         Confirm Payment
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Modal -->
+  <div class="modal" id="payment-modal">
+   <div class="modal-content">
+    <span class="close" id="close-modal">&times;</span>
+    <h2 class="text-2xl font-bold text-neon-green mb-4">Checking Payment</h2>
+    <p class="text-gray-300">Please wait while we verify your transaction...</p>
+   </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6">
+   <div class="container mx-auto px-4 text-center">
+    <p class="text-gray-500">
+     © 2025 Matrix M. All rights reserved.
+    </p>
+    <div class="flex justify-center space-x-4 mt-4">
+     <a class="text-white hover:text-neon-green" href="#">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a class="text-white hover:text-neon-green" href="#">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a class="text-white hover:text-neon-green" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="text-white hover:text-neon-green" href="#">
+      <i class="fab fa-linkedin-in">
+      </i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.getElementById('payment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('payment-modal').style.display = 'block';
+    });
+
+    document.getElementById('close-modal').addEventListener('click', function() {
+      document.getElementById('payment-modal').style.display = 'none';
+    });
+  </script>
+ </body>
+</html>
